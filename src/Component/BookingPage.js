@@ -21,7 +21,7 @@ export default function BookingPage() {
 
   return (
     <section className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-12">
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl">
+      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl mt-11">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Fill Out Your Details
         </h2>
