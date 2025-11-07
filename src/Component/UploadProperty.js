@@ -6,12 +6,17 @@ import API_URL from "../apiPoint";
 export default function UploadProperty() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    name: "", location: "", rent: "", type: "", image: ""
+    name: "",
+    location: "",
+    rent: "",
+    type: "",
+    image: "",
   });
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,9 +28,9 @@ export default function UploadProperty() {
       const payload = {
         ...form,
         owner: user.name,
-        ownerId: user.id || user._id
+        ownerId: user.id || user._id,
       };
-      const res = await axios.post( API_URL+"/api/properties/add", payload);
+      const res = await axios.post(API_URL + "/api/properties/add", payload);
       alert(res.data.message || "Uploaded");
       navigate("/owner/home");
     } catch (err) {
@@ -36,24 +41,45 @@ export default function UploadProperty() {
 
   return (
     <div className="container py-4 mt-20">
-      <h3 className="mb-3">Upload Property</h3>
+      <h3 className="mb-3 font-bold text-center text-2xl">Upload Property</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Property Name</label>
-          <input name="name" onChange={handleChange} className="form-control" required />
+          <input
+            name="name"
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
         </div>
         <div className="mb-3">
           <label className="form-label">Location</label>
-          <input name="location" onChange={handleChange} className="form-control" required />
+          <input
+            name="location"
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
         </div>
         <div className="mb-3 row">
           <div className="col">
             <label className="form-label">Rent</label>
-            <input name="rent" type="number" onChange={handleChange} className="form-control" required />
+            <input
+              name="rent"
+              type="number"
+              onChange={handleChange}
+              className="form-control"
+              required
+            />
           </div>
           <div className="col">
             <label className="form-label">Type</label>
-            <select name="type" onChange={handleChange} className="form-select" required>
+            <select
+              name="type"
+              onChange={handleChange}
+              className="form-select"
+              required
+            >
               <option value="">Select</option>
               <option value="hostel">Hostel</option>
               <option value="pg">PG</option>
@@ -64,7 +90,12 @@ export default function UploadProperty() {
         </div>
         <div className="mb-3">
           <label className="form-label">Image URL</label>
-          <input name="image" onChange={handleChange} className="form-control" required />
+          <input
+            name="image"
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
         </div>
         <button className="btn btn-warning text-white">Upload</button>
       </form>

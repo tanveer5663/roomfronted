@@ -195,6 +195,7 @@ export default function RegisterAsStudent() {
     email: "",
     phone: "",
     password: "",
+    number: "",
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate(); // ✅ moved inside component
@@ -218,6 +219,7 @@ export default function RegisterAsStudent() {
         email: formData.email,
         password: formData.password,
         role: "student",
+        number: formData.number,
       });
 
       setMessage("✅ Registered successfully!");
@@ -285,7 +287,7 @@ export default function RegisterAsStudent() {
                   <div className="mb-4">
                     <input
                       type="tel"
-                      name="phone"
+                      name="number"
                       className="form-control"
                       placeholder="Phone number"
                       onChange={handleChange}

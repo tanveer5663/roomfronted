@@ -9,7 +9,7 @@ export default function RegisterAsOwner() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    number: '',
     password: ''
   });
   const [message, setMessage] = useState('');
@@ -33,6 +33,7 @@ export default function RegisterAsOwner() {
         name: formData.name,
         email: formData.email,
         password: formData.password,
+        number: formData.number,
         role: 'owner',
       });
 
@@ -98,7 +99,7 @@ export default function RegisterAsOwner() {
                   <div className="mb-4">
                     <input
                       type="tel"
-                      name="phone"
+                      name="number"
                       className="form-control"
                       placeholder="Phone number"
                       onChange={handleChange}
