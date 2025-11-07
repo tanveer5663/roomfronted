@@ -304,7 +304,7 @@ export default function RegisterAsStudent() {
                   <p className="text-center mt-3 mb-0 text-white-50">
                     Already have an account?{" "}
                     <Link
-                      to="/LoginAsOwner"
+                      to="/LoginAsStudent"
                       className="link-warning text-decoration-none"
                     >
                       Login
