@@ -38,7 +38,7 @@ const LoginAsStudent = () => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setMessage("✅ Login successful! Redirecting...");
-      setTimeout(() => navigate("/Hero"), 1000);
+      navigate("/");
     } catch (err) {
       console.error(err);
       setMessage("❌ " + (err.response?.data?.message || "Login failed"));

@@ -20,6 +20,7 @@ const Navbar = () => {
     setUser(null);
     navigate("/");
   };
+  console.log(user);
 
   return (
     // <nav className="bg-yellow-300 shadow-md fixed w-full top-0 left-0 z-50">
@@ -143,6 +144,14 @@ const Navbar = () => {
           >
             Contact
           </Link>
+          {user && user.role === "owner" && (
+            <Link
+              to="/owner/home"
+              className="text-gray-800 hover:text-yellow-500 font-medium transition duration-300"
+            >
+              Admin
+            </Link>
+          )}
         </div>
 
         {/* ✅ LOGIN / REGISTER / LOGOUT TOGGLE */}

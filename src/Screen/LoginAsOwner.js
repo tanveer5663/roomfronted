@@ -88,7 +88,7 @@ if (res.data.user.role !== "owner") {
       console.log(res.data);
 
       // redirect to owner dashboard after 1s
-      setTimeout(() => navigate('/Hero'), 1000);
+      setTimeout(() => navigate('/'), 1000);
     } catch (err) {
       console.error(err);
       setMessage('❌ ' + (err.response?.data?.message || 'Login failed'));
