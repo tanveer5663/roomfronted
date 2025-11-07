@@ -249,7 +249,7 @@ export default function RegisterAsStudent() {
             <div className="card p-4 shadow bg-dark text-white bg-opacity-75">
               <div className="card-body">
                 <h3 className="card-title text-center mb-4">
-                  Register as an Owner
+                  Register as an Student
                 </h3>
                 <form onSubmit={handleSubmit}>
                   <div className="row g-3 mb-3">
