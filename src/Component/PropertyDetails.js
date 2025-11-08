@@ -41,7 +41,7 @@ const PropertyDetails = () => {
 
     try {
       const res = await axios.post(API_URL + "/api/bookings/book", bookingData);
-      alert(res.data.message);
+      
       setProperty({ ...property, booked: true });
 
       setMessage("✅ Property booked successfully!");
@@ -58,7 +58,7 @@ const PropertyDetails = () => {
       const res = await axios.delete(
         `${API_URL}/api/bookings/unbook/${property._id}`
       );
-      alert(res.data.message);
+    
       setProperty({ ...property, booked: false });
       setMessage("✅ Property is now unbooked!");
     } catch (err) {

@@ -31,7 +31,7 @@ export default function UploadProperty() {
         ownerId: user.id || user._id,
       };
       const res = await axios.post(API_URL + "/api/properties/add", payload);
-      alert(res.data.message || "Uploaded");
+      // alert(res.data.message || "Uploaded");
       navigate("/owner/home");
     } catch (err) {
       console.error(err);
